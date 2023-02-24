@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_finance_sample/account.dart';
 import 'package:flutter_finance_sample/record.dart';
 
 class Dashboard extends StatelessWidget {
@@ -70,113 +71,29 @@ class Dashboard extends StatelessWidget {
               child: Row(
                 children: [
                   Expanded(
-                    child: Container(
-                      padding: EdgeInsets.all(12),
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        gradient: LinearGradient(
-                          colors: [
-                            Colors.purple,
-                            Colors.purpleAccent,
-                          ],
-                        ),
-                      ),
-                      child: Column(
-                        children: [
-                          Text(
-                            "Bank Acount",
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            "\$ 2500",
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
+                    child: CustomAccount(
+                      text: "Bank Acount",
+                      moneyText: "\$ 1500",
+                      colors1: Colors.purple,
+                      colors2: Colors.purpleAccent,
                     ),
                   ),
                   SizedBox(width: 10),
                   Expanded(
-                    child: Container(
-                      padding: EdgeInsets.all(12),
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        gradient: LinearGradient(
-                          colors: [
-                            Colors.green,
-                            Colors.greenAccent,
-                          ],
-                        ),
-                      ),
-                      child: Column(
-                        children: [
-                          Text(
-                            "Credit Card",
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            "\$ 1500",
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
+                    child: CustomAccount(
+                      text: "Credit Card",
+                      moneyText: "\$ 2500",
+                      colors1: Colors.green,
+                      colors2: Colors.greenAccent,
                     ),
                   ),
                   SizedBox(width: 10),
                   Expanded(
-                    child: Container(
-                      padding: EdgeInsets.all(12),
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        gradient: LinearGradient(
-                          colors: [
-                            Colors.orange,
-                            Colors.orangeAccent,
-                          ],
-                        ),
-                      ),
-                      child: Column(
-                        children: [
-                          Text(
-                            "Cash",
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            "\$ 300",
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
+                    child: CustomAccount(
+                      text: "Cash",
+                      moneyText: "\$ 500",
+                      colors1: Colors.pink,
+                      colors2: Colors.pinkAccent,
                     ),
                   ),
                 ],
