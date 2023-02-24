@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_finance_sample/account.dart';
+import 'package:flutter_finance_sample/account_widget.dart';
 import 'package:flutter_finance_sample/record.dart';
+import 'package:flutter_finance_sample/record_widget.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -141,90 +142,95 @@ class Dashboard extends StatelessWidget {
                 child: ListView.builder(
                   itemCount: records.length,
                   itemBuilder: (_, i) {
-                    return Stack(
-                      children: [
-                        Container(
-                          margin: EdgeInsets.only(
-                            left: 30,
-                            bottom: 10,
-                          ),
-                          color: Colors.white,
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 50,
-                            vertical: 15,
-                          ),
-                          child: Padding(
-                            padding: EdgeInsets.only(left: 60),
-                            child: Column(
-                              children: [
-                                Row(
-                                  children: [
-                                    Text(
-                                      records[i].category,
-                                      style: TextStyle(
-                                        fontSize: 24,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    Spacer(),
-                                    Text(
-                                      records[i].date,
-                                      style: TextStyle(
-                                        fontSize: 16,
-                                        color: Colors.grey,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(height: 10),
-                                Row(
-                                  children: [
-                                    Text(
-                                      records[i].acountType,
-                                      style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.grey,
-                                      ),
-                                    ),
-                                    Spacer(),
-                                    Text(
-                                      "\$${records[i].amount}",
-                                      style: TextStyle(
-                                        fontSize: 22,
-                                        color: Colors.deepOrange,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          top: 10,
-                          bottom: 10,
-                          child: Container(
-                            width: 90,
-                            height: 70,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              gradient: LinearGradient(colors: [
-                                Colors.purple,
-                                Colors.purpleAccent,
-                              ]),
-                              color: Colors.red,
-                            ),
-                            child: Icon(
-                              changeAccodingToCategory(records[i].category),
-                              color: Colors.white,
-                              size: 35,
-                            ),
-                          ),
-                        ),
-                      ],
+                    return CustomRecord(
+                      recordsLength: i,
+                      changeAccodingToCategory:
+                          changeAccodingToCategory(records[i].category),
                     );
+                    // return Stack(
+                    //   children: [
+                    //     Container(
+                    //       margin: EdgeInsets.only(
+                    //         left: 30,
+                    //         bottom: 10,
+                    //       ),
+                    //       color: Colors.white,
+                    //       padding: EdgeInsets.symmetric(
+                    //         horizontal: 50,
+                    //         vertical: 15,
+                    //       ),
+                    //       child: Padding(
+                    //         padding: EdgeInsets.only(left: 60),
+                    //         child: Column(
+                    //           children: [
+                    //             Row(
+                    //               children: [
+                    //                 Text(
+                    //                   records[i].category,
+                    //                   style: TextStyle(
+                    //                     fontSize: 24,
+                    //                     fontWeight: FontWeight.bold,
+                    //                   ),
+                    //                 ),
+                    //                 Spacer(),
+                    //                 Text(
+                    //                   records[i].date,
+                    //                   style: TextStyle(
+                    //                     fontSize: 16,
+                    //                     color: Colors.grey,
+                    //                   ),
+                    //                 ),
+                    //               ],
+                    //             ),
+                    //             SizedBox(height: 10),
+                    //             Row(
+                    //               children: [
+                    //                 Text(
+                    //                   records[i].acountType,
+                    //                   style: TextStyle(
+                    //                     fontSize: 18,
+                    //                     fontWeight: FontWeight.bold,
+                    //                     color: Colors.grey,
+                    //                   ),
+                    //                 ),
+                    //                 Spacer(),
+                    //                 Text(
+                    //                   "\$${records[i].amount}",
+                    //                   style: TextStyle(
+                    //                     fontSize: 22,
+                    //                     color: Colors.deepOrange,
+                    //                     fontWeight: FontWeight.bold,
+                    //                   ),
+                    //                 ),
+                    //               ],
+                    //             ),
+                    //           ],
+                    //         ),
+                    //       ),
+                    //     ),
+                    //     Positioned(
+                    //       top: 10,
+                    //       bottom: 10,
+                    //       child: Container(
+                    //         width: 90,
+                    //         height: 70,
+                    //         decoration: BoxDecoration(
+                    //           borderRadius: BorderRadius.circular(10),
+                    //           gradient: LinearGradient(colors: [
+                    //             Colors.purple,
+                    //             Colors.purpleAccent,
+                    //           ]),
+                    //           color: Colors.red,
+                    //         ),
+                    //         child: Icon(
+                    //           changeAccodingToCategory(records[i].category),
+                    //           color: Colors.white,
+                    //           size: 35,
+                    //         ),
+                    //       ),
+                    //     ),
+                    //   ],
+                    // );
                   },
                 ),
               ),
